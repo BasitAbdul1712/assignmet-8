@@ -3,27 +3,22 @@ import { useParams } from 'react-router';
 import Comments from '../Comments/Comments';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { Navbar } from 'react-bootstrap';
-import Header from '../Header/Header';
 
 const useStyles = makeStyles({
-    root: {
-      maxWidth: '100%',
-        minWidth: '50%',
-        height: 275,
-    },
-   
-    title: {
-        fontSize: 35,
-    },
-    pos: {
-        marginBottom: 23,
-    },
+  root: {
+    maxWidth: 845,
+  },
+  media: {
+    height: 140,
+  },
 });
+
 
 
 const PostDetails = () => {
@@ -42,37 +37,43 @@ const PostDetails = () => {
     }, [])
     
     const friendStyle = { 
-        
-        display: 'flex',
-        marginLeft: '100px',
-        marginRight: '100px',
+        marginLeft: '23%',
+        marginRight: '20%',
+        padding: '10px',
+        borderRadius: '40px',
+        alignItem: 'center',
+        justifyContent: 'center',
+        display: 'flex'
       
-        // alignItem: 'center',
-        // justifyContent: 'center',
     }
     return (
-        <div >
+        <div  >
            {/* <Header></Header> */}
-            <Card style= {friendStyle} className={classes.root}>
-                <CardContent>
-                    <Typography className={classes.title} color="textSecondary" gutterBottom>
+
+    <Card style={friendStyle} className={classes.root}>
+      <CardActionArea>
+       
+        <CardContent>
+        <Typography className={classes.title} color="textSecondary" gutterBottom>
                      Post no: {posts.id}
         </Typography>
-                    <Typography variant="h5" component="h2">
-                        Post Title: {posts.title} 
-        </Typography>
-                    <br/>
-                    <Typography variant="body2" component="p">
-                        Post Details: <br/>
-                        <br/> {posts.body}
-          <br />
-                        {'"a benevolent smile"'}
+          <Typography gutterBottom variant="h5" component="h2">
+          Post Title: {posts.title}
+          </Typography>
+          
+        <Typography variant="body2" component="p">
+        Post Details: <br/> 
+        <br/>
+         {posts.body} <br/>
                     </Typography>
-                </CardContent>
-                {/* <CardActions>
-                    <Button size="small">Learn More</Button>
-                </CardActions> */}
-            </Card>
+          <Typography variant="body2" color="textSecondary" component="p">
+          {posts.body}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
+
+            
             <Comments posts={posts} ></Comments>
         </div>
     );

@@ -1,8 +1,9 @@
 import { useParams } from 'react-router';
 import React, { useEffect, useState } from 'react';
-import Picture from '../Picture/Picture';
+
 
 import CommentDetails from '../CommentDetails/CommentDetails';
+import Picture from '../Picture/Picture';
 
 
 const Comments = () => {
@@ -20,8 +21,9 @@ const Comments = () => {
   
     return (
         <div >
+        
             {
-                comments.map(cmt =><CommentDetails cmt={cmt} key={cmt.id} ></CommentDetails> )
+                comments.map(cmt =><CommentDetails cmt={cmt} key = {cmt.id}></CommentDetails> )
             }
            
         </div>

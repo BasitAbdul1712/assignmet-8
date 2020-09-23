@@ -12,6 +12,7 @@ import Home from './components/Home/Home';
 import Post from './components/Post/Post';
 import PostDetails from './components/PostDetails/PostDetails';
 import NotFound from './components/NotFound/NotFound';
+import Comments from './components/Comments/Comments';
 
 function App() {
   return (
@@ -31,7 +32,7 @@ function App() {
             <Home></Home>
           </Route>
           <Route exact path="/">
-            <Home></Home>
+          <Home></Home>
           </Route>
           <Route path="/*">
             <NotFound></NotFound>

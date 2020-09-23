@@ -11,7 +11,7 @@ import { useParams } from 'react-router';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 445,
+    maxWidth: 380,
     
   },
   media: {
@@ -30,7 +30,6 @@ const CommentDetails = (props) => {
         
         display: 'flex',
         padding: '5px',
-        borderRadius: '40px',
         alignItem: 'center',
         justifyContent: 'center',
     }
